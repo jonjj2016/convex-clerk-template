@@ -1,17 +1,33 @@
 {
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "editor.formatOnSave": true,
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "json"
-    ],
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "prettier.requireConfig": true,
-    "editor.tabSize": 4,
-    "editor.insertSpaces": true
-} 
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+        "source.fixAll": "explicit"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "workbench.colorCustomizations": {
+        "titleBar.activeBackground": "#7C3AED",
+        "titleBar.activeForeground": "#FFFFFF",
+        "titleBar.inactiveBackground": "#5B21B6",
+        "titleBar.inactiveForeground": "#E9D5FF",
+        "activityBar.background": "#7C3AED",
+        "activityBar.foreground": "#FFFFFF",
+        "activityBar.inactiveForeground": "#E9D5FF",
+        "activityBarBadge.background": "#4C1D95",
+        "activityBarBadge.foreground": "#FFFFFF",
+        "statusBar.background": "#7C3AED",
+        "statusBar.foreground": "#FFFFFF",
+        "statusBarItem.remoteBackground": "#5B21B6",
+        "statusBarItem.remoteForeground": "#FFFFFF",
+        "panel.border": "#7C3AED",
+        "sideBar.border": "#7C3AED",
+        "editorGroup.border": "#7C3AED",
+        "tab.activeBorder": "#7C3AED",
+        "tab.activeBorderTop": "#7C3AED",
+        "statusBar.border": "#7C3AED",
+        "activityBar.border": "#7C3AED",
+        "titleBar.border": "#7C3AED"
+    }
+}
