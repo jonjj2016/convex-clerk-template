@@ -1005,10 +1005,10 @@ concat-map@0.0.1:
   resolved "https://registry.npmmirror.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==
 
-convex@^1.19.3:
-  version "1.19.3"
-  resolved "https://registry.npmmirror.com/convex/-/convex-1.19.3.tgz#b2490b6c2a30a34b041a1f3c352031b35e4584ab"
-  integrity sha512-WO7MbQVKZ5unKlexPr5HbiNph9YA4/XlEG1ZTqDMxTQd0P2RCasKo69XyrQCCYm0IqLm1XGTfQv8kP3wbDhm+Q==
+convex@^1.19.4:
+  version "1.19.4"
+  resolved "https://registry.npmmirror.com/convex/-/convex-1.19.4.tgz#61d5deb264691ae22e57b1a350e6312903aa3c18"
+  integrity sha512-IK7O1m4EilPcSNN49h3gDpEp3wPhDYOAbCmFEkYpP/Rr2Scxscay7j0xbkuupKAYgnfF1bEXIxwiMhET7VNIYA==
   dependencies:
     esbuild "0.25.0"
     jwt-decode "^3.1.2"

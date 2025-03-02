@@ -1,3 +1,4 @@
+'use client';
 import { ClerkProvider } from './clerk-provider';
 import { ConvexClientProvider } from './convex-provider';
 import { ThemeProvider } from './theme-provider';
@@ -17,7 +18,7 @@ export const RootProvider = ({
                     enableSystem={true}
                     disableTransitionOnChange={true}
                 >
-                    {children}
+                    <body className={`antialiased`}>{children}</body>
                     <ToasterProvider />
                 </ThemeProvider>
             </ConvexClientProvider>

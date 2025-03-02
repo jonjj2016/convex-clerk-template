@@ -1,15 +1,15 @@
-import { useTheme } from 'next-themes'
-import { Toaster } from '../components/ui/sonner'
+import { useTheme } from 'next-themes';
+import { Toaster } from '../components/ui/sonner';
 
 export const ToasterProvider = () => {
-  const { resolvedTheme } = useTheme()
+    const { resolvedTheme } = useTheme();
 
-  return (
-    <Toaster
-      richColors
-      closeButton
-      position="top-right"
-      theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
-    />
-  )
-}
+    return (
+        <Toaster
+            richColors
+            closeButton
+            position="top-right"
+            theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
+        />
+    );
+};
