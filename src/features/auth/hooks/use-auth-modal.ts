@@ -1,18 +1,18 @@
-import { parseAsBoolean, useQueryState } from "nuqs";
+import { parseAsBoolean, useQueryState } from 'nuqs';
 
-export const useAuthModal = ({ path }: { path: string }) => {
-  const [isOpen, setIsOpen] = useQueryState(
-    path,
-    parseAsBoolean.withDefault(false).withOptions({ clearOnDefault: true }),
-  );
+export const useAuthModal = () => {
+    const [isOpen, setIsOpen] = useQueryState(
+        'sign-in',
+        parseAsBoolean.withDefault(false).withOptions({ clearOnDefault: true })
+    );
 
-  const open = () => setIsOpen(true);
-  const close = () => setIsOpen(false);
+    const open = () => setIsOpen(true);
+    const close = () => setIsOpen(false);
 
-  return {
-    isOpen,
-    open,
-    close,
-    setIsOpen,
-  };
+    return {
+        isOpen,
+        open,
+        close,
+        setIsOpen,
+    };
 };

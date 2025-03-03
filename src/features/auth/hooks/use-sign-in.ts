@@ -2,6 +2,7 @@ import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 
 import { useSignIn as useClerkSignin } from '@clerk/nextjs';
+import { OAuthStrategy } from '@clerk/types';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
@@ -11,12 +12,9 @@ import { SignInSchema } from '../schemas';
 import { useAuthModal } from './use-auth-modal';
 
 export const useSignIn = () => {
-    const {
-        open,
-        isOpen: isModalOpen,
-        close: closeModal,
-    } = useAuthModal({ path: 'sign-in' });
+    const { open, isOpen: isModalOpen, close: closeModal } = useAuthModal();
     const { isLoaded, signIn } = useClerkSignin();
+
     const [isPending, setIsPending] = useState(false);
     const form = useForm<z.infer<typeof SignInSchema>>({
         resolver: zodResolver(SignInSchema),
@@ -26,6 +24,24 @@ export const useSignIn = () => {
             password: '',
         },
     });
+    const signInWith = (strategy: OAuthStrategy) => {
+        if (!signIn) return null;
+        return signIn
+            .authenticateWithRedirect({
+                strategy,
+                redirectUrl: '/sign-up/sso-callback',
+                redirectUrlComplete: '/',
+            })
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err: any) => {
+                // See https://clerk.com/docs/custom-flows/error-handling
+                // for more info on error handling
+                console.log(err.errors);
+                console.error(err, null, 2);
+            });
+    };
     const {
         reset,
         formState: { errors },
@@ -68,6 +84,7 @@ export const useSignIn = () => {
     return {
         onAuthenticateUser,
         isPending,
+        signInWithGoogle: () => signInWith('oauth_google'),
         showTwoFactor,
         register,
         errors,

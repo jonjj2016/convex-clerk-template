@@ -31,9 +31,9 @@ const PasswordInput = forwardRef<HTMLInputElement, InputProps>(
                     disabled={disabled}
                 >
                     {showPassword && !disabled ? (
-                        <EyeClosed className="h-4 w-4" aria-hidden="true" />
-                    ) : (
                         <Eye className="h-4 w-4" aria-hidden="true" />
+                    ) : (
+                        <EyeClosed className="h-4 w-4" aria-hidden="true" />
                     )}
                     <span className="sr-only">
                         {showPassword ? 'Hide password' : 'Show password'}

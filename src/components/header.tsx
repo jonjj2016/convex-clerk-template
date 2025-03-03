@@ -1,11 +1,14 @@
-import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import { SignedIn, UserButton } from '@clerk/nextjs';
 import Link from 'next/link';
 
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
+import { useAuthModal } from '../features/auth/hooks/use-auth-modal';
 
 export const Header = () => {
+    const { open: openSignInModal } = useAuthModal();
+
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <Container>
@@ -18,11 +21,18 @@ export const Header = () => {
 
                     <div className="flex items-center justify-between gap-6">
                         <ThemeToggle />
-                        <SignedOut>
+                        <Button
+                            onClick={() => {
+                                openSignInModal();
+                            }}
+                            size="sm"
+                        >
+                            Sign in
+                        </Button>
+                        {/* <SignedOut>
                             <SignInButton mode="modal">
-                                <Button size="sm">Sign in</Button>
                             </SignInButton>
-                        </SignedOut>
+                        </SignedOut> */}
                         <SignedIn>
                             <UserButton />
                         </SignedIn>

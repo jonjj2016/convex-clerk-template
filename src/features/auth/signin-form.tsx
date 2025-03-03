@@ -25,7 +25,8 @@ import { useSignIn } from './hooks/use-sign-in';
 // import { useSignIn } from "@/hooks/authentication/use-sign-in";
 
 export default function LoginFrom({ onCancel }: { onCancel?: () => void }) {
-    const { isPending, onAuthenticateUser, form } = useSignIn();
+    const { isPending, onAuthenticateUser, form, signInWithGoogle } =
+        useSignIn();
 
     return (
         <>
@@ -98,6 +99,13 @@ export default function LoginFrom({ onCancel }: { onCancel?: () => void }) {
                                 className="w-full"
                             >
                                 Login
+                            </Button>
+                            <Button
+                                className="cursor-pointer"
+                                 type="button"
+                                onClick={signInWithGoogle}
+                            >
+                                Sign In With Google{' '}
                             </Button>
                             {/* <GoogleAuthBtn /> */}
                         </div>
